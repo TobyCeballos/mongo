@@ -10,7 +10,7 @@ mongo
 ```  
 ## Una vez realizado el paso anterior, vamos a crear lo solicitado por la actividad en la database
 
-**1** - Para verificar que la conexión fue correcta, usar esto para ver que bases de datos tenemos creadas:
+### **1** - Para verificar que la conexión fue correcta, usar esto para ver que bases de datos tenemos creadas:
 ```
 show dbs
 ```  
