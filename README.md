@@ -3,7 +3,7 @@
 **1** - Abrir 2 terminales, en uno de ellos ejecutar:
 ```
 mongod -dbpath ./db
-```
+```  
 **2** - Seguido a esto efectuar éste otro comando, para conseguir la conexión con la base de datos:
 ```
 mongo
@@ -13,23 +13,23 @@ mongo
 **1** - Para verificar que la conexión fue correcta, usar esto para ver que bases de datos tenemos creadas:
 ```
 show dbs
-```
+```  
 **2** - Para utilizar y/o crear la base, vamos a ejecutar:
 ```
 use ecommerce
-```
+```  
 **3** - A continuación, crearemos las colecciones de mensajes y de productos con: 
 ```
 db.createCollection("mensajes")
-```
-Y
+```  
+Y  
 ```
 db.createCollection("productos")
-```
+```  
 **4** - Corroboraremos que ambas se crearon con:
 ´´´
 show collections
-´´´
+´´´  
 ## Ahora sí, vamos a insertar datos en las coleciones
 **1** - Para insertar los 10 mensajes que solicitaron en la actividad, ejecutar:
 ´´´
@@ -43,7 +43,7 @@ db.mensajes.insertMany([{email: "joseramos@hotmail.com", message: "Hola", date: 
     {email: "jonathanpardo@gmail.com", message: "Si. Nos vemos la próxima semana.", date: new Date()},
     {email: "joseramos@hotmail.com", message: "Dale, chau!", date: new Date()},
     {email: "jonathanpardo@gmail.com", message: "Adioss", date: new Date()}])
-´´´
+´´´  
 **2** - Para insertar los 10 productos que solicitan, efectuar:
 ´´´
 db.productos.insertMany([{name: "CocaCola 1lt", description: "Lorem ipsum dolor sit amet", stock:123, price:100, thumbnail:"cocacola.com"},
@@ -56,29 +56,29 @@ db.productos.insertMany([{name: "CocaCola 1lt", description: "Lorem ipsum dolor 
     {name: "Webcam", description: "tincidunt purus", stock:181, price:2860, thumbnail:"webcam1080hd.com"},
     {name: "Sartén tramontina", description: "Nullam sit amet lorem imperdiet", stock:202, price:3350, thumbnail:"tramontina.com"},
     {name: "Buzo talle M", description: "pellentesque est et", stock:222 ,price:4786, thumbnail:"nike.com"}])
-´´´
+´´´  
 **3** - Para listar todos los documentos de las colecciones usar:
 ´´´
 db.mensajes.find()
-´´´
+´´´  
 ´´´
 db.productos.find()
-´´´
+´´´  
 **4** - Ejecutar el siguiente comando para mostrar la cantidad de documentos en cada colección
 ´´´
 db.mensajes.estimatedDocumentCount()
-´´´
+´´´  
 ´´´
 db.productos.estimatedDocumentCount()
-´´´
+´´´  
 **5** - Luego insertaremos un nuevo producto con:
 ´´´
 db.productos.insert({name: "Yerba mate 1kg", description: "gravida lacus", stock:242, price:374, thumbnail:"amanda.com"})
-´´´
+´´´  
 **6** - Listaremos los productos menores a $1000, usando:
 ´´´
 db.productos.find({price: {$lt: 1000}}, {"name": 1})
-´´´
+´´´  
 Tras eso filtraremos los productos que se encuentran entre $1000 y $3000
 ´´´
 db.productos.find({price: {$in: [1000, 3000]}}, {"name": 1})
