@@ -4,13 +4,28 @@
 ```
 mongod -dbpath ./db
 ```
+**2** - Seguido a esto efectuar éste otro comando, para conseguir la conexión con la base de datos:
+```
+mongo
+```  
+## Una vez realizado el paso anterior, vamos a interactuar con la database
 
-show dbs;
-
-use ecommerce;
-
+**1** - Para verificar que la conexión fue correcta, usar esto para ver que bases de datos tenemos creadas:
+```
+show dbs
+```
+**2** - Para utilizar y crear la base, vamos a ejecutar:
+```
+use ecommerce
+```
+**3** - A continuación, crearemos las colecciones de mensajes y de productos con: 
+```
 db.createCollection("mensajes")
+```
+Y
+```
 db.createCollection("productos")
+```
 
 show collections
 
