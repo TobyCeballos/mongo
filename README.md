@@ -10,7 +10,7 @@ mongo
 ```  
 ## Una vez realizado el paso anterior, vamos a crear lo solicitado por la actividad en la database
 
-### **1** - Para verificar que la conexión fue correcta, usar esto para ver que bases de datos tenemos creadas:
+**1** - Para verificar que la conexión fue correcta, usar esto para ver que bases de datos tenemos creadas:
 ```
 show dbs
 ```  
@@ -30,7 +30,7 @@ db.createCollection("productos")
 ```
 show collections
 ```  
-## Ahora sí, vamos a insertar datos en las coleciones
+## Ahora sí, vamos a insertar datos en las colecciones
 **1** - Para insertar los 10 mensajes que solicitaron en la actividad, ejecutar:
 ``` 
 db.mensajes.insertMany([{email: "joseramos@hotmail.com", message: "Hola", date: new Date()},
@@ -103,7 +103,11 @@ Posterior a esto, borraremos todos los productos mentores a $1000,usando:
 db.productos.remove({price: {$lt: 1000}});
 
 **8** Ahora crearemos un usuario con unicamente permisos de lectura:  
-usaremos 
+llamaremos a la base "admin" para crear el usuario dentro de ella, con:
+``` 
 use admin
-
+``` 
+Para posteriormente crear el usuario con:
+``` 
 db.createUser({user: "pepe", pwd: "asd456", roles: [{role: "read", db:"ecommerce"}]})
+``` 
