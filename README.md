@@ -1,7 +1,9 @@
 # Comandos del desafio de MongoDB - Coderhouse
 
-1- Abrir 2 terminales, en uno de ellos ejecutar:
-    -> mongod -dbpath ./db
+*1* - Abrir 2 terminales, en uno de ellos ejecutar:
+```
+mongod -dbpath ./db
+```
 
 show dbs;
 
