@@ -99,8 +99,10 @@ A continuacion, vamos a cambiar el stock a 0 a aquellos productos que valen mas 
 ``` 
 db.productos.update({price: {$gt: 4000}}, {$set: {"stock": 0}, {multi: true}});
 ``` 
-Posterior a esto, borraremos todos los productos mentores a $1000,usando:
-db.productos.remove({price: {$lt: 1000}});
+Posterior a esto, borraremos todos los productos menores a $1000,usando:
+```
+db.productos.remove({price: {$lt: 1000}})
+```
 
 **8** Ahora crearemos un usuario con unicamente permisos de lectura:  
 llamaremos a la base "admin" para crear el usuario dentro de ella, con:
