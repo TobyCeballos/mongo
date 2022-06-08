@@ -80,8 +80,8 @@ db.productos.insert({name: "Yerba mate 1kg", description: "gravida lacus", stock
 db.productos.find({price: {$lt: 1000}}, {"name": 1})
 ```   
 Tras eso filtraremos los productos que se encuentran entre $1000 y $3000
-``` 
-db.productos.find({price: {$in: [1000, 3000]}}, {"name": 1})
+```
+db.productos.find({$and: [ {price: {$gt: 1000}}, {price: {$lt: 3000}} ] })
 ``` 
 Despues los mayores a $3000:
 ``` 
